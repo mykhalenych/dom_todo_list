@@ -1,4 +1,4 @@
-## 1. Клонування репозиторію
+## 1. Завдання 1
 
 1. Зверстайте дизайн todo list https://www.figma.com/design/okerdVq7RmKuUxcDjmIfQI/Simple-ToDo-List-Design-(Community)?node-id=1-2&t=CSP6KDn49a1Bf9AS-0
 2. Для стилізації використовуйте класи
