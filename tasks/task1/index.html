@@ -9,6 +9,82 @@
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Todo List</h1>
+    <div class="todo-container">
+
+        <h1 class="title">TODO LIST</h1>  
+
+        <header class="controls">
+          <input type="text" class="search-input" placeholder="Search note...">
+          <div class="dropdown-container">
+            <button class="dropdown-toggle">
+                <img src="./assers/Select.svg" alt="">
+            </button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item" data-theme="all">All</li>
+              <li class="dropdown-item" data-theme="complete">Complete</li>
+              <li class="dropdown-item" data-theme="incomplete">Incomplete</li>
+            </ul>
+          </div>
+          <button class="theme-toggle">
+            <img src="./assers/Color Scheme.svg" alt="">
+          </button>
+        </header>
+    
+        <main class="todo-list">
+          <div class="todo-item">
+            <input type="checkbox" class="checkbox">
+            <span>NOTE #1</span>
+            <div class="actions">
+              <button class="edit-button">
+                <img src="./assers/Frame 6.svg" alt="">
+              </button>
+              <button class="delete-button">
+                <img src="./assers/trash-svgrepo-com 1.svg" alt="">
+              </button>
+            </div>
+          </div>
+          <div class="todo-item">
+            <input type="checkbox" class="checkbox">
+            <span>NOTE #2</span>
+            <div class="actions">
+              <button class="edit-button">
+                <img src="./assers/Frame 6.svg" alt="">
+              </button>
+              <button class="delete-button">
+                <img src="./assers/trash-svgrepo-com 1.svg" alt="">
+              </button>
+            </div>
+          </div>
+          <div class="todo-item">
+            <input type="checkbox" class="checkbox">
+            <span>NOTE #3</span>
+            <div class="actions">
+              <button class="edit-button">
+                <img src="./assers/Frame 6.svg" alt="">
+              </button>
+              <button class="delete-button">
+                <img src="./assers/trash-svgrepo-com 1.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </main>
+
+        <label for="modal-toggle" class="add-button">
+          <img src="./assers/Add button.svg" alt="Add">
+        </label>
+        <input type="checkbox" id="modal-toggle" class="modal-toggle">
+      
+        <div class="modal">
+          <div class="modal-content">
+            <h2 class="modal-title">NEW NOTE</h2>
+            <input type="text" class="modal-input" placeholder="Input your note...">
+            <div class="modal-buttons">
+              <label for="modal-toggle" class="cancel-button">CANCEL</label>
+              <button class="apply-button">APPLY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 </body>
 </html>
