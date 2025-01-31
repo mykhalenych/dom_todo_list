@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="todo-container">
+
+    <h1 class="title">TODO LIST</h1>
+
+    <header class="controls">
+        <input type="text" class="search-input" placeholder="Search note...">
+        <div class="dropdown-container">
+            <button class="dropdown-toggle">
+                <img src="./assers/select.svg" alt="">
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-item" data-theme="all">All</li>
+                <li class="dropdown-item" data-theme="complete">Complete</li>
+                <li class="dropdown-item" data-theme="incomplete">Incomplete</li>
+            </ul>
+        </div>
+        <button class="theme-toggle">
+            <img src="./assers/color_scheme.svg" alt="">
+        </button>
+    </header>
+
+    <ul class="todo-list"></ul>
+
+    <button class="add-button">
+        <img src="./assers/add_button.svg" alt="Add">
+    </button>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">NEW NOTE</h2>
+            <input type="text" class="modal-input" placeholder="Input your note...">
+            <div class="modal-buttons">
+                <button class="cancel-button">CANCEL</button>
+                <button class="apply-button">APPLY</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
