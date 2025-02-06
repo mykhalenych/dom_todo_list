@@ -87,10 +87,10 @@ const renderTodos = () => {
 
     todoList.innerHTML = todos.map((item) => {
         return `
-        <li data-id="${item.id}" class="todo-item">
-            <input type="checkbox" class="checkbox">
-            <span>${item.text}</span>
-             <div class="actions">
+       <li data-id="${item.id}" class="todo-item">
+            <input type="checkbox" class="checkbox" ${item.completed ? 'checked' : ''}>
+            <span class="${item.completed ? 'completed' : ''}">${item.text}</span>
+            <div class="actions">
                 <button class="edit-button">
                     <img src="./assers/edit.svg" alt="">
                 </button>
@@ -99,8 +99,8 @@ const renderTodos = () => {
                 </button>
             </div>
         </li>
-    `;
-    })
+        `;
+    }).join('');
 };
 
 // Функція для видалення todo
@@ -117,6 +117,42 @@ const editTodo = (todoItem) => {
     inputValue.value = todoItem.text;
     console.log(inputValue)
 };
+
+//--------------------
+
+// Доданий скрипт для відслідковування чекбоксів
+const handleCheckboxChange = (event) => {
+    const checkbox = event.target.closest('.checkbox');
+    const todoItemDom = event.target.closest('.todo-item');
+
+    if (checkbox && todoItemDom) {
+        const todoId = todoItemDom.dataset.id;
+        if (!todoId) {
+            console.error('Todo ID not found!');
+            return;
+        }
+        const todos = getTodosFromLocalStorage();
+
+        const todo = todos.find((item) => item.id.toString() === todoId.toString());
+        if (todo) {
+            todo.completed = checkbox.checked; // Оновлюємо статус completed
+            localStorage.setItem("todoList", JSON.stringify(todos)); // Зберігаємо зміни
+            if (todo.completed) {
+                todoItemDom.querySelector('span').classList.add('completed');
+            } else {
+                todoItemDom.querySelector('span').classList.remove('completed');
+            }
+        }else {
+            console.error('Todo not found in the list!');
+        }
+    } else {
+        console.error('Checkbox or TodoItemDom is missing!');
+    }
+    
+};
+
+document.querySelector('.todo-list').addEventListener('change', handleCheckboxChange);
+//-----------------------
 
 // Обробник для редагування todo (використовуємо event delegation)
 document.querySelector('.todo-list').addEventListener('click', (event) => {
@@ -135,5 +171,6 @@ document.querySelector('.todo-list').addEventListener('click', (event) => {
         deleteTodo(todoList, todoId)
     }
 });
+
 
 
