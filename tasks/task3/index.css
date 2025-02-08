@@ -26,6 +26,12 @@ ul {
     padding: 0;
 }
 
+.completed {
+    text-decoration: line-through;
+    color: grey;
+    opacity: 0.6;
+}
+
 .todo-container {
     width: 850px;
     height: 510px;
