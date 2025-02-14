@@ -136,4 +136,3 @@ document.querySelector('.todo-list').addEventListener('click', (event) => {
     }
 });
 
-

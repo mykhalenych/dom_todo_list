@@ -357,3 +357,16 @@ ul {
     color: grey;
     opacity: 0.6;
 }
+
+.test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+    flex-direction: column;
+}
+
+.error {
+    border: 1px solid red;
+    background: #4500b2;
+}
